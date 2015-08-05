@@ -2,41 +2,24 @@
   var toTop = $('#toTop').length ? $('#toTop').offset().top - $(window).height() + 20 : 0;
 
   // Share
+  //[idss]replaced by landscape-plus
   $('body').on('click', function(){
     $('.article-share-box.on').removeClass('on');
   }).on('click', '.article-share-link', function(e){
     e.stopPropagation();
 
-    var $this = $(this),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      id = 'article-share-box-' + $this.attr('data-id'),
-      offset = $this.offset();
+    var $this = $(this)
+    var offset = $this.offset()
+    var url = $this.attr('data-url')
 
-    if ($('#' + id).length){
-      var box = $('#' + id);
+    var box = $('#article-share-box')
+    box.find('input').val(url)
+    shareDataUrl = $this.attr('data-url');
+    shareDataTitle = $this.attr('data-title');
 
-      if (box.hasClass('on')){
-        box.removeClass('on');
-        return;
-      }
-    } else {
-      var html = [
-        '<div id="' + id + '" class="article-share-box">',
-          '<input class="article-share-input" value="' + url + '">',
-          '<div class="article-share-links">',
-            '<a href="http://service.weibo.com/share/share.php?url='+encodedUrl +'&searchPic=true&style=number' +'" class="fa fa-weibo article-share-google" target="_blank" title="Weibo"></a>',
-            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-          '</div>',
-        '</div>'
-      ].join('');
-
-      var box = $(html);
-
-      $('body').append(box);
+    if (box.hasClass('on')){
+      box.removeClass('on');
+      return;
     }
 
     $('.article-share-box.on').hide();
@@ -55,7 +38,8 @@
 
     window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
   });
-
+  //[idss]replaced by landscape-plus
+  
   // Caption
   $('.article-entry').each(function(i){
     $(this).find('img').each(function(){

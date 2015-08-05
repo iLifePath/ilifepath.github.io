@@ -160,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.ilifepath.com/tags/index.html" data-id="cicxit3ug000dvp85dtwom53u" class="article-share-link">分享到</a>
+      <a data-url="http://blog.ilifepath.com/tags/index.html" data-id="cicxhsvcs000ds185tuvwn7nt" class="article-share-link">分享到</a>
       
         <a href="http://blog.ilifepath.com/tags/index.html#comments" class="article-comment-link">评论</a>
       
@@ -324,6 +324,40 @@
 
     
 
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <input class="article-share-input" value="http://blog.ilifepath.com">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo fa" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin fa" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-baidu fa" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a class="article-share-qq fa" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren fa" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-facebook fa" data-cmd="fbook" title="分享到 Facebook"></a>
+    <a class="article-share-twitter fa" data-cmd="twi" title="分享到 Twitter"></a>
+    <a class="article-share-google fa" data-cmd="ty" title="分享到 Google+"></a>
+    <a class="article-share-linkedin fa" data-cmd="linkedin" title="分享到 LinkedIn"></a>
+    <a class="article-share-more fa" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
 
 <script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
