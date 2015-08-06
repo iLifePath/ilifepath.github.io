@@ -26,7 +26,7 @@
 
     box.css({
       top: offset.top + 25,
-      left: offset.left
+      left: offset.left - 35
     }).addClass('on');
   }).on('click', '.article-share-box', function(e){
     e.stopPropagation();
